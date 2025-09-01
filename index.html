@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belleza Perfecta - Maquilladora Profesional</title>
+    <title>Male Gigliotti</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
+html {
+    scroll-behavior: smooth;
+}
+
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%);
             min-height: 100vh;
         }
-        
+
         .hero-gradient {
             background: linear-gradient(135deg, #ec4899 0%, #db2777 50%, #be185d 100%);
         }
-        
+
         .service-card {
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
-        
+
         .service-card:hover {
             transform: translateY(-5px);
             border-color: #ec4899;
             box-shadow: 0 20px 40px rgba(236, 72, 153, 0.1);
         }
-        
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #ec4899, #db2777, #be185d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .floating {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
-        
+
         .shine-effect {
             position: relative;
             overflow: hidden;
         }
-        
+
         .shine-effect::after {
             content: '';
             position: absolute;
@@ -65,67 +77,99 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
             transform: rotate(45deg);
             animation: shine 3s infinite;
         }
-        
+
         @keyframes shine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
         }
-        
+
         .instagram-gradient {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
         }
     </style>
 </head>
+
 <body class="min-h-screen">
     <!-- Header -->
-    <header class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
-        <div class="navbar-start">
-            <a class="btn btn-ghost text-xl gradient-text font-bold">Belleza Perfecta</a>
-        </div>
-        <div class="navbar-end">
-            <ul class="menu menu-horizontal px-1 hidden md:flex">
-                <li><a href="#quien-soy" class="text-pink-600 hover:text-pink-700">¿Quién Soy?</a></li>
-                <li><a href="#maquillajes" class="text-pink-600 hover:text-pink-700">Maquillajes</a></li>
-                <li><a href="#contacto" class="text-pink-600 hover:text-pink-700">Contacto</a></li>
-            </ul>
-            <div class="dropdown dropdown-end md:hidden">
-                <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    <header class="fixed w-full z-50 top-0 bg-white/70 backdrop-blur-lg shadow-md">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+            <!-- Logo / Nombre -->
+            <a href="#"
+                class="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700">
+                Malena Gigliotti
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#quien-soy"
+                    class="text-pink-600 hover:text-pink-400 transition-colors duration-300 font-medium">¿Quién Soy?</a>
+                <a href="#maquillajes"
+                    class="text-pink-600 hover:text-pink-400 transition-colors duration-300 font-medium">Maquillajes</a>
+                <a href="#contacto"
+                    class="text-pink-600 hover:text-pink-400 transition-colors duration-300 font-medium">Contacto</a>
+            </nav>
+
+            <!-- Menu Mobile -->
+            <div class="md:hidden relative">
+                <button id="mobile-menu-btn" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400">
+                    <svg class="h-6 w-6 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
+                </button>
+
+                <div id="mobile-menu"
+                    class="absolute right-0 mt-2 w-48 bg-white/80 backdrop-blur-lg rounded-lg shadow-lg hidden flex-col space-y-2 p-4">
+                    <a href="#quien-soy" class="text-pink-600 hover:text-pink-400 transition-colors">¿Quién Soy?</a>
+                    <a href="#maquillajes" class="text-pink-600 hover:text-pink-400 transition-colors">Maquillajes</a>
+                    <a href="#contacto" class="text-pink-600 hover:text-pink-400 transition-colors">Contacto</a>
                 </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                    <li><a href="#quien-soy" class="text-pink-600">¿Quién Soy?</a></li>
-                    <li><a href="#maquillajes" class="text-pink-600">Maquillajes</a></li>
-                    <li><a href="#contacto" class="text-pink-600">Contacto</a></li>
-                </ul>
             </div>
         </div>
     </header>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
 
     <!-- Hero Section -->
     <section class="hero min-h-screen hero-gradient text-white">
         <div class="hero-content text-center">
             <div class="max-w-4xl">
                 <div class="floating mb-8">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/375804c8-6e44-49a6-8321-ce6f12516c32.png" alt="Retrato profesional de maquilladora sonriente con herramientas de trabajo" class="w-64 h-64 rounded-full mx-auto border-4 border-white shadow-2xl" />
+                    <img src="./img/malePerfil.png"
+                        alt="Retrato profesional de Malena Gigliotti,maquilladora profesional"
+                        class="w-64 h-64 rounded-full mx-auto border-4 border-white shadow-2xl" />
                 </div>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6">Transformo Miradas, Creo Confianza</h1>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Brilla Hoy, Siempre</h1>
                 <p class="text-xl md:text-2xl mb-8 opacity-90">
-                    Maquillaje profesional que realza tu belleza natural para cada ocasión especial
+                    Maquillaje profesional que realza lo mejor de ti
                 </p>
                 <div class="flex flex-col md:flex-row gap-4 justify-center">
                     <a href="#maquillajes" class="btn btn-primary btn-lg text-white shine-effect">
                         Ver Mis Trabajos
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
                         </svg>
                     </a>
-                    <a href="#contacto" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-pink-600">
+                    <a href="#contacto"
+                        class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-pink-600">
                         Reservar Cita
                     </a>
                 </div>
@@ -137,66 +181,76 @@
     <section id="quien-soy" class="py-20 px-4">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">¿Quién Soy?</h2>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="relative">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/28de3322-0ac4-4490-a098-90f4f1ca7ae5.png" alt="Maquilladora trabajando en estudio con herramientas profesionales y buena iluminación" class="rounded-2xl shadow-2xl w-full" />
+                    <img src="./img/file.jpeg"
+                        alt="Maquilladora trabajando en estudio con herramientas profesionales y buena iluminación"
+                        class="rounded-2xl shadow-2xl w-full" />
                     <div class="absolute -bottom-6 -right-6 bg-pink-500 text-white p-6 rounded-2xl shadow-xl">
                         <div class="text-3xl font-bold">5+</div>
                         <div class="text-sm">Años de Experiencia</div>
                     </div>
                 </div>
-                
+
                 <div>
-                    <h3 class="text-2xl font-bold text-pink-600 mb-6">Sofía Martínez - Maquilladora Profesional</h3>
+                    <h3 class="text-2xl font-bold text-pink-600 mb-6">Malena Gigliotti - Maquilladora Profesional</h3>
                     <p class="text-lg text-gray-700 mb-6">
-                        Con más de 5 años de experiencia en el mundo del maquillaje, mi pasión es ayudar a las mujeres a descubrir y realzar su belleza única. 
+                        Con más de 5 años de experiencia en el mundo del maquillaje, mi pasión es ayudar a
+                        descubrir y realzar su belleza única.
                         Especializada en maquillaje social, de novia y artístico.
                     </p>
-                    
+
                     <div class="space-y-4 mb-8">
                         <div class="flex items-center">
                             <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
                             <span class="text-gray-700">Certificación Internacional en Maquillaje Profesional</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
                             <span class="text-gray-700">Especialista en Maquillaje de Novia y Eventos</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
                             <span class="text-gray-700">Técnicas Avanzadas de Corrección y Realce</span>
                         </div>
                     </div>
-                    
-                    <button class="btn btn-primary text-white">
+
+                    <!-- <button class="btn btn-primary text-white">
                         Conoce Mi Historia
-                    </button>
+                    </button> -->
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Maquillajes Section -->
-    <section id="maquillajes" class="py-20 bg-base-200 px-4">
+    <section id="maquillajes" class="py-20 bg-pink-50 px-4">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Mis Maquillajes</h2>
-            
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text text-pink-600">Mis Maquillajes
+            </h2>
+
             <!-- Services Accordion -->
             <div class="join join-vertical w-full mb-16">
-                <div class="collapse collapse-arrow join-item border border-base-300">
+                <div class="collapse collapse-arrow join-item border border-pink-200">
                     <input type="radio" name="my-accordion-4" checked="checked" />
                     <div class="collapse-title text-xl font-medium text-pink-600">
                         Maquillaje de Novia
@@ -204,25 +258,32 @@
                     <div class="collapse-content">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
-                                <p class="text-gray-700 mb-4">
-                                    Maquillaje especial para el día más importante de tu vida. Duradero, fotogénico y diseñado para realzar tu belleza natural sin opacarla.
+                                <p class="text-gray-600 mb-4">
+                                    Maquillaje especial para el día más importante de tu vida. Duradero, fotogénico y
+                                    diseñado para realzar tu belleza natural sin opacarla.
                                 </p>
                                 <ul class="space-y-2 mb-6">
                                     <li class="flex items-center">
-                                        <svg class="w-5 h-5 text-pink-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         Prueba de maquillaje incluida
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="w-5 h-5 text-pink-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         Productos resistentes al agua
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="w-5 h-5 text-pink-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         Duración de 8+ horas
                                     </li>
@@ -230,13 +291,15 @@
                                 <div class="text-2xl font-bold text-pink-600">$150</div>
                             </div>
                             <div>
-                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4efc2e9c-4e95-44fa-b596-43633c9c0a7b.png" alt="Novia con maquillaje elegante y natural, sonriendo con velo blanco" class="rounded-2xl w-full h-48 object-cover" />
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4efc2e9c-4e95-44fa-b596-43633c9c0a7b.png"
+                                    alt="Novia con maquillaje elegante y natural, sonriendo con velo blanco"
+                                    class="rounded-2xl w-full h-48 object-cover" />
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="collapse collapse-arrow join-item border border-base-300">
+
+                <div class="collapse collapse-arrow join-item border border-pink-200">
                     <input type="radio" name="my-accordion-4" />
                     <div class="collapse-title text-xl font-medium text-pink-600">
                         Maquillaje Social
@@ -244,25 +307,32 @@
                     <div class="collapse-content">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
-                                <p class="text-gray-700 mb-4">
-                                    Perfecto para eventos sociales, fiestas y ocasiones especiales. Desde looks naturales hasta maquillajes más elaborados.
+                                <p class="text-gray-600 mb-4">
+                                    Perfecto para eventos sociales, fiestas y ocasiones especiales. Desde looks
+                                    naturales hasta maquillajes más elaborados.
                                 </p>
                                 <ul class="space-y-2 mb-6">
                                     <li class="flex items-center">
-                                        <svg class="w-5 h-5 text-pink-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         Consultoría de estilo incluida
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="w-5 h-5 text-pink-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         Productos de alta calidad
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="w-5 h-5 text-pink-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         Técnicas de larga duración
                                     </li>
@@ -270,13 +340,15 @@
                                 <div class="text-2xl font-bold text-pink-600">$80</div>
                             </div>
                             <div>
-                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6290fdc8-75cc-464d-9643-883f31c099f1.png" alt="Mujer con maquillaje elegante para evento nocturno, iluminación suave" class="rounded-2xl w-full h-48 object-cover" />
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6290fdc8-75cc-464d-9643-883f31c099f1.png"
+                                    alt="Mujer con maquillaje elegante para evento nocturno, iluminación suave"
+                                    class="rounded-2xl w-full h-48 object-cover" />
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="collapse collapse-arrow join-item border border-base-300">
+
+                <div class="collapse collapse-arrow join-item border border-pink-200">
                     <input type="radio" name="my-accordion-4" />
                     <div class="collapse-title text-xl font-medium text-pink-600">
                         Maquillaje Artístico
@@ -284,25 +356,32 @@
                     <div class="collapse-content">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
-                                <p class="text-gray-700 mb-4">
-                                    Para sesiones fotográficas, desfiles o eventos temáticos. Creatividad sin límites para looks únicos y originales.
+                                <p class="text-gray-600 mb-4">
+                                    Para sesiones fotográficas, desfiles o eventos temáticos. Creatividad sin límites
+                                    para looks únicos y originales.
                                 </p>
                                 <ul class="space-y-2 mb-6">
                                     <li class="flex items-center">
-                                        <svg class="w-5 h-5 text-pink-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         Diseño personalizado
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="w-5 h-5 text-pink-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         Productos profesionales
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="w-5 h-5 text-pink-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         Técnicas especiales
                                     </li>
@@ -310,7 +389,9 @@
                                 <div class="text-2xl font-bold text-pink-600">$120</div>
                             </div>
                             <div>
-                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d6dd6dd6-0bf2-4dcf-b897-73ec3546e3f1.png" alt="Maquillaje artístico creativo con colores vibrantes y diseños abstractos" class="rounded-2xl w-full h-48 object-cover" />
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d6dd6dd6-0bf2-4dcf-b897-73ec3546e3f1.png"
+                                    alt="Maquillaje artístico creativo con colores vibrantes y diseños abstractos"
+                                    class="rounded-2xl w-full h-48 object-cover" />
                             </div>
                         </div>
                     </div>
@@ -319,30 +400,35 @@
 
             <!-- Gallery -->
             <h3 class="text-3xl font-bold text-center mb-12 text-pink-600">Galería de Trabajos</h3>
-            <div class="gallery-grid">
-                <div class="card service-card bg-base-100 shadow-xl">
+            <div class="gallery-grid grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card service-card bg-white/90 border border-pink-200 shadow-xl">
                     <figure>
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d75c411a-b2e7-4b58-9c8b-192cac8e72e0.png" alt="Maquillaje natural de día con acabado perfecto en piel" class="w-full h-48 object-cover" />
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d75c411a-b2e7-4b58-9c8b-192cac8e72e0.png"
+                            alt="Maquillaje natural de día con acabado perfecto en piel"
+                            class="w-full h-48 object-cover" />
                     </figure>
                     <div class="card-body">
                         <h4 class="card-title text-pink-600">Look Natural</h4>
                         <p>Maquillaje perfecto para el día a día</p>
                     </div>
                 </div>
-                
-                <div class="card service-card bg-base-100 shadow-xl">
+
+                <div class="card service-card bg-white/90 border border-pink-200 shadow-xl">
                     <figure>
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c138ee51-2147-43b5-96c7-e8a305d0510a.png" alt="Maquillaje de noche con humos y brillos elegantes" class="w-full h-48 object-cover" />
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c138ee51-2147-43b5-96c7-e8a305d0510a.png"
+                            alt="Maquillaje de noche con humos y brillos elegantes" class="w-full h-48 object-cover" />
                     </figure>
                     <div class="card-body">
                         <h4 class="card-title text-pink-600">Noche Glam</h4>
                         <p>Elegante y sofisticado para eventos</p>
                     </div>
                 </div>
-                
-                <div class="card service-card bg-base-100 shadow-xl">
+
+                <div class="card service-card bg-white/90 border border-pink-200 shadow-xl">
                     <figure>
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/64ce14b0-4000-435f-a155-8f6b92b94b0c.png" alt="Maquillaje artístico con detalles dorados y diseño creativo" class="w-full h-48 object-cover" />
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/64ce14b0-4000-435f-a155-8f6b92b94b0c.png"
+                            alt="Maquillaje artístico con detalles dorados y diseño creativo"
+                            class="w-full h-48 object-cover" />
                     </figure>
                     <div class="card-body">
                         <h4 class="card-title text-pink-600">Artístico Dorado</h4>
@@ -353,37 +439,120 @@
         </div>
     </section>
 
+
+    <!-- Contacto Section -->
     <!-- Contacto Section -->
     <section id="contacto" class="py-20 px-4">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Contacto</h2>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div>
                     <h3 class="text-2xl font-bold text-pink-600 mb-6">¡Hablemos!</h3>
                     <p class="text-gray-700 mb-8">
-                        Estoy aquí para ayudarte a lucir radiante en tu próximo evento. Contáctame para consultas, presupuestos o reservas.
+                        Estoy aquí para ayudarte a lucir radiante en tu próximo evento. Contáctame para consultas,
+                        presupuestos o reservas.
                     </p>
-                    
+
                     <div class="space-y-6 mb-8">
                         <div class="flex items-center">
                             <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
                                 </svg>
                             </div>
                             <div>
                                 <div class="font-semibold text-lg">Teléfono</div>
-                                <div class="text-gray-600 text-lg">+1 (555) 123-4567</div>
+                                <div class="text-gray-600 text-lg">+54 9 2915 66-4496</div>
                             </div>
                         </div>
-                        
+
                         <div class="flex items-center">
-                            <div class="w-12 h-12 instagram-gradient rounded-full flex items-center justify-center mr-4">
+                            <div
+                                class="w-12 h-12 instagram-gradient rounded-full flex items-center justify-center mr-4">
                                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                                 </svg>
                             </div>
                             <div>
                                 <div class="font-semibold text-lg">Instagram</div>
-                                <a href="https://www.instagram.com/makeupbymaleg/" target="_blank" class="text-pink-600
+                                <a href="https://www.instagram.com/makeupbymaleg/" target="_blank"
+                                    class="text-pink-600 hover:text-pink-500">@makeupbymaleg</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario de contacto 
+            <div>
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="name">Nombre</label>
+                        <input type="text" id="name" placeholder="Tu nombre"
+                            class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-pink-400" />
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="email">Email</label>
+                        <input type="email" id="email" placeholder="Tu email"
+                            class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-pink-400" />
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="message">Mensaje</label>
+                        <textarea id="message" rows="5" placeholder="Escribe tu mensaje..."
+                            class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 rounded-lg transition-colors duration-300">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div> -->
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-pink-600 text-white py-8 mt-12">
+        <div class="max-w-6xl mx-auto text-center">
+            <p>&copy; 2025 Malena Gigliotti. Todos los derechos reservados.</p>
+
+        </div>
+    </footer>
+
+    <!-- Optional: Scroll to top button -->
+    <!-- Scroll to Top Button Mejorado -->
+<button id="scrollTopBtn"
+    class="fixed bottom-6 right-6 bg-gradient-to-br from-pink-400 to-pink-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transform transition-all duration-300 hidden flex items-center justify-center">
+    <!-- Icono de flecha -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M5 15l7-7 7 7" />
+    </svg>
+</button>
+
+
+    <script>
+        // Scroll to top functionality
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('hidden');
+            } else {
+                scrollBtn.classList.add('hidden');
+            }
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>
